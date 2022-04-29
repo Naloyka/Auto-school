@@ -352,8 +352,6 @@ ul {
 }
 
 .btn-information:hover {
-  width: 190px;
-  height: 49px;
   background-color: white;
   border-radius: 10px;
   border: none;

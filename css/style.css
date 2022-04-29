@@ -322,6 +322,7 @@ ul {
 .btn-informations {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 30px;
 }
 
@@ -345,13 +346,7 @@ ul {
 }
 
 .btn-information:hover {
-    width: 190px;
-    height: 49px;
     background-color: white;
-    border-radius: 10px;
-    border: none;
-    font-weight: bold;
-    font-size: 16px;
     color: black;
 }
 
@@ -752,15 +747,21 @@ ul {
     border: none;
     border-bottom: 2px solid #989898;
     font-size: 15px;
-    color: #989898;
+    color: #2B8E53;
+    font-size: 16px;
+    font-weight: bold;
     margin-top: 40px;
+}
+
+.img-form::placeholder {
+    font-size: 15px;
+    color: #989898;
+    font-weight: regular;
 }
 
 .input-form:focus {
     outline: none;
-    color: #2B8E53;
-    font-size: 16px;
-    font-weight: bold;
+    
     border-bottom: 2px solid #2B8E53;
 }
 
@@ -991,6 +992,7 @@ ul {
 
     .div-banner-information {
         display: block;
+        margin-top: 0;
     }
 
     .div-banner {
@@ -1000,6 +1002,11 @@ ul {
         max-width: calc(100% - 80px);
         min-width: 0;
         height: auto;
+        padding: 0;
+        max-width: 100%;
+        box-sizing: border-box;
+        margin-top: 40px;
+        margin-bottom: 40px;
 
     }
 
@@ -1013,6 +1020,16 @@ ul {
 
     .img-banner {
         margin-top: 0px;
+        margin-left: 0;
+    }
+
+    .btn-banner {
+        width: 100%;
+    }
+
+    .banner-tite {
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     /*Наши филиалы*/
@@ -1038,7 +1055,9 @@ ul {
         flex-wrap: wrap;
     }
 
-
+    .btn-information {
+        width: 100%;
+    }
 
     /**/
 
@@ -1048,6 +1067,14 @@ ul {
 
     .questian-img-container {
         border-radius: 0 0 0 0 ;
+    }
+
+    .title-questian {
+        font-size: 25px;
+        margin: auto;
+    }
+    .container-title-questian {
+        height: auto;
     }
 
     /*Instructor*/
@@ -1109,6 +1136,10 @@ ul {
     }
 
     .img-instructor-big {
+        width: 100%;
+    }
+
+    .container-title-questian {
         width: 100%;
     }
 
