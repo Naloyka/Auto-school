@@ -1,12 +1,14 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
+
 
 @font-face {
     font-family: inter;
     src: url("../font/Inter-Regular.otf");
-    font-weight: regular;
+    font-weight: 400;
     font-style: normal;
 }
 
@@ -19,6 +21,9 @@
 
 body {
     font-family: inter;
+    line-height: 1.4;
+width:100%;
+height:100%; 
 }
 
 .header {
@@ -56,6 +61,7 @@ body {
 .nav-header-container {
     display: block;
     padding: 45px;
+    box-sizing: border-box;
 
 }
 
@@ -93,7 +99,7 @@ body {
 
 .option-contact {
     padding: 15px;
-    
+
 }
 
 .select-contact::before {
@@ -139,7 +145,9 @@ body {
     width: 16px;
     height: 16px;
     margin-right: 5px;
+    
 }
+
 
 .btn-call {
     display: inline-block;
@@ -362,6 +370,10 @@ ul {
 
 }
 
+.next {
+    display: none;
+}
+
 .img-point {
     display: block;
     width: 40px;
@@ -420,6 +432,10 @@ ul {
     display: block;
     margin: auto;
     max-width: 620px;
+    overflow: hidden;
+}
+.btn__more {
+    display: none;
 }
 
 .text-container-instructor {
@@ -449,9 +465,17 @@ ul {
     margin-top: 20px;
 }
 
-.container-img-instructor {
+.img__container {
     display: block;
     width: 100%;
+    position: relative;
+}
+
+.container-img-instructor {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
 }
 
 .container-slider {
@@ -485,18 +509,17 @@ ul {
     display: block;
 }
 
-.img-container-big {
+.img-instructor {
     display: block;
-    width: 290px;
-    height: 385px;
+    height: 200px;
+    width: 190px;
 }
 
 .img-instructor-big {
     display: block;
-    width: 100%;
-    object-fit: contain;
+    width: 290px;
+    height: 385px;
 }
-
 .slider-img {
     display: flex;
     padding-left: 30px;
@@ -504,6 +527,34 @@ ul {
     justify-content: space-between;
     gap: 30px;
 }
+
+.container__arrow {
+    display: flex;
+    position: absolute;
+    top: 250px;
+    width: 160px;
+    right: 250px;
+}
+
+.arrow__left, .arrow__right {
+    width: 80px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+.arrow__left {
+    background-image: url("../Image/Arrow\ 1.png");
+}
+
+.arrow__right {
+    background-image: url("../Image/Arrow\ 2.png");
+}
+
+
 
 
 
@@ -602,8 +653,8 @@ ul {
 .qestion-text {
     display: none;
     margin-top: 10px;
-    
-    
+
+
 }
 
 .title-question {
@@ -756,12 +807,11 @@ ul {
 .img-form::placeholder {
     font-size: 15px;
     color: #989898;
-    font-weight: regular;
 }
 
 .input-form:focus {
     outline: none;
-    
+
     border-bottom: 2px solid #2B8E53;
 }
 
@@ -859,12 +909,13 @@ ul {
 
 .list-footer {
     display: flex;
+    width: 100%;
     justify-content: flex-start;
     column-gap: 45px;
     row-gap: 30px;
     color: #F1F1F1;
-    font-weight: regular;
     flex-wrap: wrap;
+    box-sizing: border-box;
 }
 
 .link-footer-item {
@@ -878,7 +929,6 @@ ul {
 
 .contact-footer {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     gap: 30px;
     text-align: center;
@@ -893,9 +943,9 @@ ul {
 }
 
 .copyright-link {
-    color: #F1F1F1;
+    color: #989898;
     text-decoration: none;
-    font-weight: 200;
+    font-size: 15px;
 }
 
 .contact-adress-footer {
@@ -980,15 +1030,122 @@ ul {
 
 
 
+@media (max-width: 1024px) {
 
-@media (max-width: 1025px) {
+ 
+    /* Шапка сайта */
+
+    .logo {
+        display: block;
+        position: absolute;
+        z-index: 6;
+    }
+
+    .header {
+        display: block;
+        position: fixed;
+        height: 80px;
+        box-shadow: 0 0 15px 0 #F1F1F1;
+        z-index: 1;
+
+        top: 0;
+        width: 100%;
+        background-color: white;
+        box-sizing: border-box;
+    }
+
+    .nav-header-container {
+        display: none;
+
+    }
+
+    .nav-container {
+        display: none;
+        
+        box-sizing: border-box;
+        box-shadow: 0 0 0 0;
+        top: 80px;
+        bottom: 0;
+        z-index: 2;
+        right: 0;
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        height: auto;
+        background-color: white;
+
+    }
+
+    .menu {
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-items: center;
+        width: 90%;
+        height: 200px;
+        background-color: white;
+        column-gap: 20px;
+
+
+        box-sizing: border-box;
+
+
+    }
+
+    .burger-menu {
+        position: absolute;
+        right: 5px;
+       width: 70px;
+        height: 70px;
+        background-color: white;
+        border: none;
+        z-index: 3;
+
+    }
+
+    .burger {
+        display: block;
+        background-color: #2B8E53;
+        position: absolute;
+
+
+        top: 35px;
+        left: 20px;
+        height: 2px;
+        width: 25px;
+
+
+
+    }
+
+    .burger:before {
+        content: "";
+        position: absolute;
+        background-color: #2B8E53;
+        height: 2px;
+        width: 25px;
+        top: 8px;
+        left: 0;
+
+    }
+
+    .burger::after {
+        content: "";
+        position: absolute;
+        background-color: #2B8E53;
+        height: 2px;
+        width: 25px;
+        bottom: 8px;
+        left: 0;
+
+    }
+
+
+
 
 
     /*Баннер*/
 
-    .information-adress {
-        margin-top: 75px;
-    }
+   
 
     .div-banner-information {
         display: block;
@@ -996,6 +1153,7 @@ ul {
     }
 
     .div-banner {
+
         width: 100%;
         margin: auto;
         padding: 30px;
@@ -1005,10 +1163,12 @@ ul {
         padding: 0;
         max-width: 100%;
         box-sizing: border-box;
-        margin-top: 40px;
+        margin-top: 120px;
         margin-bottom: 40px;
 
     }
+
+
 
     .banner-image {
         min-width: 0;
@@ -1059,20 +1219,62 @@ ul {
         width: 100%;
     }
 
+    .point {
+        width: 100%;
+        text-align: center;
+        margin-top: 40px;
+        display: none;
+
+    }
+
+    .active-point {
+        display: block;
+    }
+
+    .title_information {
+        font-size: 25px;
+    }
+
+    .title_information {
+        margin-bottom: 0;
+    }
+
+    .information-adress {
+        background-color: #F1F1F1;
+        box-sizing: border-box;
+        margin-top: 0;
+        padding-top: 75px;
+    }
+
+
+    .next {
+        display: block;
+    }
+
+    .count {
+        font-weight: bold;
+    }
+
+    .count__num {
+        font-weight: bold;
+        color: #FF574D;
+    }
+
     /**/
 
-    
-    
+
+
     /*Блоки с вопросами*/
 
     .questian-img-container {
-        border-radius: 0 0 0 0 ;
+        border-radius: 0 0 0 0;
     }
 
     .title-questian {
         font-size: 25px;
         margin: auto;
     }
+
     .container-title-questian {
         height: auto;
     }
@@ -1120,17 +1322,22 @@ ul {
         margin-right: auto;
         margin-left: auto;
         height: 100%;
-        padding-left: 0x;
+        padding-left: 0;
         padding-right: 0px;
-         margin-right: auto;
+        margin-right: auto;
 
     }
 
+    .btn__more {
+        display: block;
+    }
+    
     .container-img-instructor {
         display: none;
     }
 
     .img-container-big {
+        display: flex;
         max-width: 100%;
         width: 100%;
     }
@@ -1139,8 +1346,27 @@ ul {
         width: 100%;
     }
 
+    .container__arrow{
+        display: none;
+    }
     .container-title-questian {
         width: 100%;
+    }
+
+    #more {
+        display: none;
+    }
+
+
+
+    .btn__more {
+        color: #2B8E53;
+        font-weight: bold;
+        border: none;
+        background-color: white;
+        font-size: 16px;
+        margin-top: 15px;
+        margin-bottom: 40px;
     }
 
     /*Карта*/
@@ -1161,7 +1387,7 @@ ul {
     }
 
     .img-container-big {
-        order: 1;
+        display: flex;
         border-radius: 10px 10px 0 0;
     }
 
@@ -1209,7 +1435,28 @@ ul {
         width: 100%;
     }
 
+    /*Footer*/
 
+    .footer {
+        padding: 90px 15px 100px;
+
+    }
+
+    .list-footer {
+        flex-wrap: wrap;
+        flex-direction: column;
+        height: 200px;
+    }
+
+    .contact-footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        text-align: center;
+        flex-wrap: wrap;
+    }
+    
 
 
 

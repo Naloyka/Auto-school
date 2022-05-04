@@ -15,14 +15,14 @@ $(function () {
     $('.title-question').click(function () {
 
         $(this).next().slideToggle(700)
-     
+
         if ($(this).parent().hasClass('container-question')) {
-            $(this).parent().removeClass('container-question').addClass('container-question-active')  
+            $(this).parent().removeClass('container-question').addClass('container-question-active')
         } else {
-           $(this).parent().removeClass('container-question-active').addClass('container-question')
+            $(this).parent().removeClass('container-question-active').addClass('container-question')
         }
-        })
-     })
+    })
+})
 
 
 // Галерея изображений инструкторов, слайдер
@@ -71,3 +71,72 @@ $(function () {
 })
 
 
+
+
+$(function () {
+    $(".arrow__right").click(function () {
+
+        var attrBig = $(".img-instructor-big").attr("src")
+        var small = $(".img-instructor-big").next().attr("src")
+        
+        alert(small)
+
+        $(".img-instructor-big").attr("src", small)
+
+       $(".img-instructor :last").attr("src", attrBig)
+
+        
+        
+       
+
+    })
+})
+
+
+
+//Бургер меню
+$(function () {
+    $(".burger-menu").click(function () {
+        $(".nav-container").css({ "opacity": "1" }).slideToggle(1000)
+
+    })
+})
+
+
+
+//Cлайд адресов 
+$(function () {
+    $(".next").click(function () {
+
+        $(".active-point").removeClass("active-point").next().addClass("active-point")
+
+        var num = $(".count__num").text()
+        num++;
+        $(".count__num").text(num)
+
+        if (num === 5) {
+            $(".count__num").text(1)
+        }
+
+        if ($(".active-point").index() === 4) {
+            $("#one").addClass("active-point")
+        }
+    })
+})
+
+//Кнопка "Читать больше"
+
+
+$(function () {
+    $(".btn__more").click(function () {
+        $(".btn__more").hide()
+
+        $("#more").css({"display":"inline"})
+
+
+
+
+
+
+    })
+})

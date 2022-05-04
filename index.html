@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Автошкола</title>
- 
+
   <link rel="stylesheet" href="css/style.css">
   <script src="jquery/jquery.slim.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/jquery.marquee/1.4.0/jquery.marquee.min.js"></script>
-  
+
+
   <script src="script/script.js"></script>
 </head>
 
@@ -21,16 +22,29 @@
     <div class="nav-header">
       <nav class="nav-header-container">
         <ul class="contact">
-          <li class="contact-item">Логотип</li>
+          <li class="contact-item logo">Логотип</li>
           <li class="contact-item">
-          <select  value="Выберите адрес" name="Выберите адрес" class="select-contact" onchange="window.location.href=this.options[this.selectedIndex].value">
+            <select name="Выберите адрес" class="select-contact"
+              onchange="window.location.href=this.options[this.selectedIndex].value">
               <option selected>Выберите адрес</option>
-              <option VALUE="file:///C:/Users/79817/Desktop/%D0%B0%D0%B2%D1%82%D0%BE%D1%88%D0%BA%D0%BE%D0%BB%D0%B0/index.html?">Ул. Репищева, д. 14</option>
-              <option VALUE="file:///C:/Users/79817/Desktop/%D0%B0%D0%B2%D1%82%D0%BE%D1%88%D0%BA%D0%BE%D0%BB%D0%B0/index.html?">Ул. Бабушкинского, д. 119</option>
-              <option VALUE="file:///C:/Users/79817/Desktop/%D0%B0%D0%B2%D1%82%D0%BE%D1%88%D0%BA%D0%BE%D0%BB%D0%B0/index.html?">Пр. Солидарности, д. 11, к.1</option>
-              <option VALUE="file:///C:/Users/79817/Desktop/%D0%B0%D0%B2%D1%82%D0%BE%D1%88%D0%BA%D0%BE%D0%BB%D0%B0/index.html?">Ул. Руднева, д. 22, к.1</option>
-              <option VALUE="file:///C:/Users/79817/Desktop/%D0%B0%D0%B2%D1%82%D0%BE%D1%88%D0%BA%D0%BE%D0%BB%D0%B0/index.html?">Пр. Культуры, д. 31, к.1</option>
-              <option VALUE="file:///C:/Users/79817/Desktop/%D0%B0%D0%B2%D1%82%D0%BE%D1%88%D0%BA%D0%BE%D0%BB%D0%B0/index.html?">Ул. Ушинского, д. 5, к.1</option>
+              <option
+                VALUE="file:///C:/Users/79817/Desktop/%D0%B0%D0%B2%D1%82%D0%BE%D1%88%D0%BA%D0%BE%D0%BB%D0%B0/index.html?">
+                Ул. Репищева, д. 14</option>
+              <option
+                VALUE="file:///C:/Users/79817/Desktop/%D0%B0%D0%B2%D1%82%D0%BE%D1%88%D0%BA%D0%BE%D0%BB%D0%B0/index.html?">
+                Ул. Бабушкинского, д. 119</option>
+              <option
+                VALUE="file:///C:/Users/79817/Desktop/%D0%B0%D0%B2%D1%82%D0%BE%D1%88%D0%BA%D0%BE%D0%BB%D0%B0/index.html?">
+                Пр. Солидарности, д. 11, к.1</option>
+              <option
+                VALUE="file:///C:/Users/79817/Desktop/%D0%B0%D0%B2%D1%82%D0%BE%D1%88%D0%BA%D0%BE%D0%BB%D0%B0/index.html?">
+                Ул. Руднева, д. 22, к.1</option>
+              <option
+                VALUE="file:///C:/Users/79817/Desktop/%D0%B0%D0%B2%D1%82%D0%BE%D1%88%D0%BA%D0%BE%D0%BB%D0%B0/index.html?">
+                Пр. Культуры, д. 31, к.1</option>
+              <option
+                VALUE="file:///C:/Users/79817/Desktop/%D0%B0%D0%B2%D1%82%D0%BE%D1%88%D0%BA%D0%BE%D0%BB%D0%B0/index.html?">
+                Ул. Ушинского, д. 5, к.1</option>
             </select>
           </li>
           <li class="contact-item">
@@ -45,6 +59,7 @@
           </li>
         </ul>
       </nav>
+      <button class="burger-menu"><span class="burger"></span></button>
     </div>
 
     <div class="navbar">
@@ -97,7 +112,8 @@
         <h1 class="title-information">Автошкола в Санкт-Петербурге</h1>
         <p class="text-information">Проходите обучение как вам удобно — в группе выходного дня, по вечерам или онлайн
         </p>
-        <button class="btn-banner">Записаться</button>
+        <button type="submit" class="btn-banner">Записаться</button>
+
       </div>
     </div>
 
@@ -126,7 +142,7 @@
 
       <div class="point-container">
         <ul class="points">
-          <li class="point">
+          <li class="point active-point one-point" id="one">
             <img src="Image/ic_baseline-place.png" alt="" class="img-point">
             <a href="#" class="link-point">Пр. Первый, 31–1</a>
           </li>
@@ -143,6 +159,10 @@
             <a href="#" class="link-point">Ул. Четвертая, 22–1</a>
           </li>
         </ul>
+        <button class="next">Следующий</button>
+        <div class="count__container">
+          <span class="count__num">1</span><span class="count">/4</span>
+        </div>
       </div>
     </div>
   </section>
@@ -155,9 +175,11 @@
       </div>
       <div class="container-info">
         <p class="text-info">Каждый инструктор имеет свидетельство, предоставляющее право на обучение вождению
-          автотранспортными средствами. Все инструкторы проходят повышение квалификации по программе «Преподаватель
-          автомобильной школы по обучению практике управления автотранспортным средством»
+          автотранспортными средствами. <span id="more">Все инструкторы проходят повышение квалификации по программе
+            «Преподаватель
+            автомобильной школы по обучению практике управления автотранспортным средством»</span>
         </p>
+        <button class="btn__more">Читать больше</button>
       </div>
     </div>
 
@@ -168,31 +190,20 @@
         <p class="text-instructor">Инструктор с 2002г.</p>
       </div>
 
-      <div class="img-container-big">
-        <img src="Image/Rectangle 8.png" alt="Инструктор 1" class="img-instructor-big">
-      </div>
-    </div>
-
-    <div class="container-img-instructor">
-
-      <div class="slider-img">
-        <div class="img-container">
-          <a href="Image/Rectangle 9.png" class="link-istructor"><img src="Image/Rectangle 9.png" alt="Инструктор 2" class="img-instructor"></a>
-        </div>
-        <div class="img-container">
-          <a href="Image/Rectangle 10.png" class="link-istructor"><img src="Image/Rectangle 10.png" alt="Инструктор 3" class="img-instructor"></a>
-        </div>
-        <div class="img-container">
-          <a href="Image/Rectangle 11.png" class="link-istructor"><img src="Image/Rectangle 11.png" alt="Инструктор 4" class="img-instructor"></a>
-        </div>
-      </div>
-      
-
-      <img src="Image/Стрелки.png" alt="" class="pointers-img">
-       
 
     </div>
-
+    <div class="img__container">
+      <div class="container-img-instructor">
+      <img src="Image/Rectangle 8.png" alt="Инструктор 1" class="img-instructor img-instructor-big">
+      <img src="Image/Rectangle 9.png" alt="Инструктор 2" class="img-instructor">
+      <img src="Image/Rectangle 10.png" alt="Инструктор 3" class="img-instructor">
+      <img src="Image/Rectangle 11.png" alt="Инструктор 4" class="img-instructor">
+    </div>
+    <div class="container__arrow">
+      <button class="arrow__left"></button>
+      <button class="arrow__right"></button>
+    </div>
+  </div>
   </div>
 
 
@@ -200,129 +211,142 @@
 
 
 
-  <div class="questian-container">
-    <div class="questian-img-container">
-      <div class="container-title-questian">
-        <h1 class="title-questian">Чаcто задаваемые вопросы</h1>
-      </div>
-
-      <img src="Image/Часто задаваемые вопросы.png" alt="Чаcто задаваемые вопросы" class="questian-img">
-    </div>
-    <div class="container-questions">
-
-      <div class="container-question">
-       <h3  class="title-question">Если прописка не в Санкт-Петербурге, могу ли я обучаться и сдавать экзамены
-        в этом городе?</h3>
-          <p class="qestion-text">По новому закону для автошколы и ГИБДД не имеет значения прописка, обучаться и сдавать экзамены может любой россиянин. Немного другая ситуация с иностранными гражданами. Чтобы обучаться и сдавать экзамены в ГИБДД, вам потребуется временная регистрация в Санкт-Петербурге или Ленинградской области сроком не менее 6 месяцев.</p>
+    <div class="questian-container">
+      <div class="questian-img-container">
+        <div class="container-title-questian">
+          <h1 class="title-questian">Чаcто задаваемые вопросы</h1>
         </div>
 
-      <div class="container-question">
-        <h3 class="title-question">На каких автомобилях проходит обучение?</h3>
-        <p class="qestion-text">По новому закону для автошколы и ГИБДД не имеет значения прописка, обучаться и сдавать экзамены может любой россиянин. Немного другая ситуация с иностранными гражданами. Чтобы обучаться и сдавать экзамены в ГИБДД, вам потребуется временная регистрация в Санкт-Петербурге или Ленинградской области сроком не менее 6 месяцев.</p>
+        <img src="Image/Часто задаваемые вопросы.png" alt="Чаcто задаваемые вопросы" class="questian-img">
       </div>
+      <div class="container-questions">
 
-      <div class="container-question">
-        <h3 class="title-question">Можно ли заниматься теорией и практикой в разных филиалах?</h3>
-        <p class="qestion-text">По новому закону для автошколы и ГИБДД не имеет значения прописка, обучаться и сдавать экзамены может любой россиянин. Немного другая ситуация с иностранными гражданами. Чтобы обучаться и сдавать экзамены в ГИБДД, вам потребуется временная регистрация в Санкт-Петербурге или Ленинградской области сроком не менее 6 месяцев.</p>
+        <div class="container-question">
+          <h3 class="title-question">Если прописка не в Санкт-Петербурге, могу ли я обучаться и сдавать экзамены
+            в этом городе?</h3>
+          <p class="qestion-text">По новому закону для автошколы и ГИБДД не имеет значения прописка, обучаться и сдавать
+            экзамены может любой россиянин. Немного другая ситуация с иностранными гражданами. Чтобы обучаться и сдавать
+            экзамены в ГИБДД, вам потребуется временная регистрация в Санкт-Петербурге или Ленинградской области сроком
+            не менее 6 месяцев.</p>
+        </div>
+
+        <div class="container-question">
+          <h3 class="title-question">На каких автомобилях проходит обучение?</h3>
+          <p class="qestion-text">По новому закону для автошколы и ГИБДД не имеет значения прописка, обучаться и сдавать
+            экзамены может любой россиянин. Немного другая ситуация с иностранными гражданами. Чтобы обучаться и сдавать
+            экзамены в ГИБДД, вам потребуется временная регистрация в Санкт-Петербурге или Ленинградской области сроком
+            не менее 6 месяцев.</p>
+        </div>
+
+        <div class="container-question">
+          <h3 class="title-question">Можно ли заниматься теорией и практикой в разных филиалах?</h3>
+          <p class="qestion-text">По новому закону для автошколы и ГИБДД не имеет значения прописка, обучаться и сдавать
+            экзамены может любой россиянин. Немного другая ситуация с иностранными гражданами. Чтобы обучаться и сдавать
+            экзамены в ГИБДД, вам потребуется временная регистрация в Санкт-Петербурге или Ленинградской области сроком
+            не менее 6 месяцев.</p>
+        </div>
+
+        <div class="container-question">
+          <h3 class="title-question">С какого возраста я могу приступить к обучение и сдавать экзамен в ГИБДД
+            на получение водительского удостоверения?</h3>
+          <p class="qestion-text">По новому закону для автошколы и ГИБДД не имеет значения прописка, обучаться и сдавать
+            экзамены может любой россиянин. Немного другая ситуация с иностранными гражданами. Чтобы обучаться и сдавать
+            экзамены в ГИБДД, вам потребуется временная регистрация в Санкт-Петербурге или Ленинградской области сроком
+            не менее 6 месяцев.</p>
+        </div>
+
+
       </div>
-
-      <div class="container-question">
-        <h3 class="title-question">С какого возраста я могу приступить к обучение и сдавать экзамен в ГИБДД
-          на получение водительского удостоверения?</h3>
-          <p class="qestion-text">По новому закону для автошколы и ГИБДД не имеет значения прописка, обучаться и сдавать экзамены может любой россиянин. Немного другая ситуация с иностранными гражданами. Чтобы обучаться и сдавать экзамены в ГИБДД, вам потребуется временная регистрация в Санкт-Петербурге или Ленинградской области сроком не менее 6 месяцев.</p>
-      </div>
-
-      
     </div>
-  </div>
 
 
 
 
 
 
-  <div class="map-contaner">
-    <h1 class="title_information">Как нас найти</h1>
-  </div>
-  <iframe class="map"
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1991.838633268849!2d30.380287316177014!3d60.050902659999274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x469634a8cc5ee003%3A0x8fc850f9b6c0d3c8!2z0L_RgC4g0JrRg9C70YzRgtGD0YDRiywgMzEg0LrQvtGA0L_Rg9GBIDEsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCAxOTUyNzY!5e0!3m2!1sru!2sru!4v1650391326509!5m2!1sru!2sru"
-    width="1290" height="585" style="border:0;" allowfullscreen="" loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
-
-
-
-
-
-  <div class="div-container-form">
-    <div class="container-form-img">
-      <img src="Image/2 32568134.png" alt="" class="img-form">
-
+    <div class="map-contaner">
+      <h1 class="title_information">Как нас найти</h1>
     </div>
-    <div class="container-form">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1991.838633268849!2d30.380287316177014!3d60.050902659999274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x469634a8cc5ee003%3A0x8fc850f9b6c0d3c8!2z0L_RgC4g0JrRg9C70YzRgtGD0YDRiywgMzEg0LrQvtGA0L_Rg9GBIDEsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCAxOTUyNzY!5e0!3m2!1sru!2sru!4v1650391326509!5m2!1sru!2sru"
+      width="1290" height="585" style="border:0;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
 
-      <form action="" class="form">
 
-        <div class="container-input">
-          <h2 class="title-form">Оставьте свои контактные данные</h2>
-          <label for="">
-            <input type="text" class="input-form" id="form_1" placeholder="Имя">
+
+
+
+    <div class="div-container-form">
+      <div class="container-form-img">
+        <img src="Image/2 32568134.png" alt="" class="img-form">
+
+      </div>
+      <div class="container-form">
+
+        <form action="" class="form">
+
+          <div class="container-input">
+            <h2 class="title-form">Оставьте свои контактные данные</h2>
+            <label for="">
+              <input type="text" class="input-form" id="form_1" placeholder="Имя">
+            </label>
+            <label for="">
+              <input type="tel" class="input-form" id="form_2" placeholder="Телефон">
+            </label>
+          </div>
+
+          <label class="radio_label">
+            <input type="checkbox" name="radio_group" class="radio-input" id="checkbox">
+            <span class="radio-span">Я согласен <a href="#" class="radio-link">с политикой конфиденциальности</a></span>
           </label>
-          <label for="">
-            <input type="tel" class="input-form" id="form_2" placeholder="Телефон">
-          </label>
-        </div>
 
-        <label class="radio_label">
-          <input type="checkbox" name="radio_group" class="radio-input" id="checkbox">
-          <span class="radio-span">Я согласен <a href="#"  class="radio-link">с политикой конфиденциальности</a></span>
-        </label>
+          <button type="submit" class="btn-form">Отправить заявку</button>
 
-        <button type="submit" class="btn-form">Отправить заявку</button>
-
-      </form>
+        </form>
+      </div>
     </div>
-  </div>
-
-  <footer class="footer">
-    <nav class="nav-footer">
-      <ul class="list-footer">
-        <li class="list-footer-item"><a href="" class="link-footer-item">Логотип</a></li>
-        <li class="list-footer-item"><a href="" class="link-footer-item">Категории</a></li>
-        <li class="list-footer-item"><a href="" class="link-footer-item">Преподаватели</a></li>
-        <li class="list-footer-item"><a href="" class="link-footer-item">Инструкторы</a></li>
-        <li class="list-footer-item"><a href="" class="link-footer-item">Наш автопарк</a></li>
-        <li class="list-footer-item"><a href="" class="link-footer-item">Наш автодром</a></li>
-        <li class="list-footer-item"><a href="" class="link-footer-item">Отзывы</a></li>
-        <li class="list-footer-item"><a href="" class="link-footer-item">Контакты</a></li>
-        <li class="list-footer-item"><a href="" class="link-footer-item"></a></li>
-      </ul>
-    </nav>
 
 
-    <nav class="nav-footer-container">
-      <ul class="contact-footer">
-        <li class="contact-item-footer">
-          <a href="#" class="copyright-link">© Все права защищены</a>
-        </li>
+    <footer class="footer">
+      <nav class="nav-footer">
+        <ul class="list-footer">
+          <li class="list-footer-item"><a href="" class="link-footer-item">Логотип</a></li>
+          <li class="list-footer-item"><a href="" class="link-footer-item">Категории</a></li>
+          <li class="list-footer-item"><a href="" class="link-footer-item">Преподаватели</a></li>
+          <li class="list-footer-item"><a href="" class="link-footer-item">Инструкторы</a></li>
+          <li class="list-footer-item"><a href="" class="link-footer-item">Наш автопарк</a></li>
+          <li class="list-footer-item"><a href="" class="link-footer-item">Наш автодром</a></li>
+          <li class="list-footer-item"><a href="" class="link-footer-item">Отзывы</a></li>
+          <li class="list-footer-item"><a href="" class="link-footer-item">Контакты</a></li>
+          <li class="list-footer-item"><a href="" class="link-footer-item"></a></li>
+        </ul>
+      </nav>
 
-        <li class="contact-item-footer">
-          <a href="tel:(812) 999–99–99" class="contact-adress-footer tel-footer">(812) 999–99–99</a>
-          <a href="tel:(812) 111–11–11" class="contact-adress-footer">(812) 111–11–11</a>
-        </li>
 
-        <li class="contact-item-footer">
-          <a href="mailto:info@asp.ru" class="contact-adress-footer mail-footer">info@asp.ru</a>
-        </li>
+      <nav class="nav-footer-container">
+        <ul class="contact-footer">
+          <li class="contact-item-footer copyright">
+            <a href="#" class="copyright-link">© Все права защищены</a>
+          </li>
+
+          <li class="contact-item-footer">
+            <a href="tel:(812) 999–99–99" class="contact-adress-footer tel-footer">(812) 999–99–99</a>
+            <a href="tel:(812) 111–11–11" class="contact-adress-footer">(812) 111–11–11</a>
+          </li>
+
+          <li class="contact-item-footer">
+            <a href="mailto:info@asp.ru" class="contact-adress-footer mail-footer">info@asp.ru</a>
+          </li>
 
 
-        <li class="icon-img">
-          <a href="#" class="social-link-instagramm"><span class="social-link">Instagramm</span></a>
-          <a href="#" class="social-link-vkontacte"><span class="social-link">Vkontacte</span></a>
-          <a href="#" class="social-link-facebook"><span class="social-link">Facebook</span></a>
-        </li>
-      </ul>
-    </nav>
-  </footer>
+          <li class="icon-img">
+            <a href="#" class="social-link-instagramm"><span class="social-link">Instagramm</span></a>
+            <a href="#" class="social-link-vkontacte"><span class="social-link">Vkontacte</span></a>
+            <a href="#" class="social-link-facebook"><span class="social-link">Facebook</span></a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
 
 </body>
 
