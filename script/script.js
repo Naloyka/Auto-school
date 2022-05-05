@@ -75,20 +75,31 @@ $(function () {
 
 $(function () {
     $(".arrow__right").click(function () {
-
-        var attrBig = $(".img-instructor-big").attr("src")
-        var small = $(".img-instructor-big").next().attr("src")
-        
-        alert(small)
-
-        $(".img-instructor-big").attr("src", small)
-
-       $(".img-instructor :last").attr("src", attrBig)
-
-        
-        
        
 
+        var attrBig = $(".img-instructor-big")
+        
+        var attrBigIndex = $(".img-instructor-big").index()
+        
+        var nextImageIndex = attrBigIndex + 1;
+       
+        var nextImage = $(".img-instructor").eq(nextImageIndex)
+        
+        attrBig.fadeOut(1000)
+        attrBig.removeClass(".img-instructor-big")
+        
+        
+
+
+        if(nextImageIndex == ($(".img-instructor:last").index()+1)){
+            $(".img-instructor").eq(0).fadeIn(1000)
+        $(".img-instructor").eq(0).addClass(".img-instructor-big")
+        } else {
+            nextImage.fadeIn(1000)
+            nextImage.addClass(".img-instructor-big")
+        }
+        
+        
     })
 })
 
@@ -114,13 +125,15 @@ $(function () {
         num++;
         $(".count__num").text(num)
 
+        if ($(".active-point").index() === -1) {
+            $("#one").addClass("active-point")
+        }
+
         if (num === 5) {
             $(".count__num").text(1)
         }
 
-        if ($(".active-point").index() === 4) {
-            $("#one").addClass("active-point")
-        }
+        
     })
 })
 
@@ -140,3 +153,18 @@ $(function () {
 
     })
 })
+
+
+
+//Бургер меню
+$(function () {
+    $(".burger-menu").click(function () {
+
+        var socialLink = $(".icon-img")
+        var tel = $(".tel-footer")
+
+        $(".menu").after(tel).after(socialLink)
+
+    })
+})
+

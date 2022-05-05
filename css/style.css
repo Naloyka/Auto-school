@@ -20,11 +20,24 @@
 }
 
 body {
+    position: relative;
     font-family: inter;
     line-height: 1.4;
 width:100%;
 height:100%; 
 }
+
+/*body::before {
+    content: "";
+    background-color: black;
+    position: fixed;
+    opacity: 0.7;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+} */
 
 .header {
     width: 100%;
@@ -772,6 +785,7 @@ ul {
 }
 
 .container-form {
+    
     box-sizing: border-box;
     max-width: 461px;
     width: 100%;
@@ -780,6 +794,7 @@ ul {
     padding: 70px;
     background-color: #F1F1F1;
     border-radius: 10px 10px 0 0;
+  
 }
 
 .container-input {
@@ -1061,7 +1076,7 @@ ul {
 
     .nav-container {
         display: none;
-        
+        position: fixed;
         box-sizing: border-box;
         box-shadow: 0 0 0 0;
         top: 80px;
@@ -1071,7 +1086,7 @@ ul {
         width: 100%;
         padding-left: 15px;
         padding-right: 15px;
-        height: auto;
+        height: 100%;
         background-color: white;
 
     }
@@ -1325,25 +1340,38 @@ ul {
         padding-left: 0;
         padding-right: 0px;
         margin-right: auto;
-
+        order: 2;
+        box-sizing: border-box;
     }
 
     .btn__more {
         display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
     
-    .container-img-instructor {
-        display: none;
-    }
+    
 
     .img-container-big {
         display: flex;
-        max-width: 100%;
+        max-width: 395px;
         width: 100%;
+        order: 1;
+    }
+
+    .img-instructor {
+        display: none;
+        border-radius: 10px 10px 0 0;
     }
 
     .img-instructor-big {
+        display: block;
+        max-width: 389px;
         width: 100%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px 10px 0 0;
     }
 
     .container__arrow{
